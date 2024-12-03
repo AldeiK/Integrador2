@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors'); // Importa el módulo CORS
 const app = express();
-const port = 3001;
+const port = 5173;
 
 // Configura CORS para permitir solicitudes de cualquier origen
 app.use(cors()); // Esto permite solicitudes de cualquier origen (puedes restringirlo si lo deseas)
