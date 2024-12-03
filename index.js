@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors'); // Importa el módulo CORS
+const { fileURLToPath } = require('url');
+const { dirname } = require('path');
 const app = express();
 const port = 5173;
 
@@ -11,6 +13,8 @@ app.use(cors()); // Esto permite solicitudes de cualquier origen (puedes restrin
 
 // Rutas y configuración del servidor
 const funciones = require('./express/funciones'); // Asegúrate de que la ruta sea correcta
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 app.use(express.static(path.join(__dirname,'dist')));
 
