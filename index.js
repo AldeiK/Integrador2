@@ -12,6 +12,12 @@ app.use(cors()); // Esto permite solicitudes de cualquier origen (puedes restrin
 // Rutas y configuración del servidor
 const funciones = require('./express/funciones'); // Asegúrate de que la ruta sea correcta
 
+app.use(express.static(path.join(__dirname,'dist')));
+
+app.get('*',(req,res)=>{
+  res.sendFile(path.join(__dirname,'dist/index.html'));0
+})
+
 // Ruta de prueba para comprobar el CORS
 app.get('/', (req, res) => {
   res.send('Servidor está funcionando');
